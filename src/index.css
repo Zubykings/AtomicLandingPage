@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  box-sizing: border-box;
+}
+
+/* .bg-image {
+  background-image: url(./assets/vera\ 2.png);
+  width: 1200px;
+} */
