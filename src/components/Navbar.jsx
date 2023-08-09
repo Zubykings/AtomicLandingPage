@@ -19,22 +19,13 @@ const Navbar = () => {
 
   return (
     <nav className="shadow-xl md:shadow-none transition-all duration-500">
-      <div className="flex items-start justify-between md:py-4">
-        <div className="flex items-center gap-5">
-          <h1 className="font-bold text-3xl px-2 md:px-0 py-4 md:py-0">
-            Atomic
-          </h1>
-          <ul
-            className={`md:flex hidden gap-3 items-center text-gray-500 ${
-              isOpen ? "flex" : "hidden"
-            }`}
-          >
+      <div className="flex items-start justify-between md:py-4 md:bg-transparent bg-gray-800 md:text-inherit text-gray-300">
+        <div className="flex items-center gap-5 ">
+          <h1 className="font-bold text-3xl px-2 md:px-0 py-4 md:py-0">Atomic</h1>
+          <ul className={`md:flex hidden gap-3 items-center text-gray-500 ${isOpen ? "flex" : "hidden"}`}>
             {navLinks.map((link, index) => (
               <li key={index}>
-                <a
-                  href={link.href}
-                  className="hover:text-green-500 transition-colors"
-                >
+                <a href={link.href} className="hover:text-green-500 transition-colors">
                   {link.label}
                 </a>
               </li>
@@ -75,12 +66,7 @@ const Navbar = () => {
                   stroke="currentColor"
                   aria-hidden="true"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               ) : (
                 <svg
@@ -91,12 +77,7 @@ const Navbar = () => {
                   stroke="currentColor"
                   aria-hidden="true"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               )}
             </button>
@@ -104,18 +85,11 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div
-        className={`overflow-hidden bg-gray-800 flex flex-col items-center justify-around transition-all duration-500 ${
-          isOpen ? "h-[25rem] py-4 px-6" : "h-0 py-0 px-0"
-        }`}
-      >
-        <ul className="flex flex-col gap-4 items-start font-bold text-start text-white  ">
+      <div className={`overflow-hidden bg-gray-800 flex flex-col md:hidden items-center justify-around transition-all duration-500 ${isOpen ? "h-[25rem] py-4 px-6" : "h-0 py-0 px-0"}`}>
+        <ul className="flex flex-col gap-4 items-s font-bold text-start text-white  ">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <a
-                href={link.href}
-                className="hover:text-green-500 transition-colors"
-              >
+              <a href={link.href} className="hover:text-green-500 transition-colors">
                 {link.label}
               </a>
             </li>
