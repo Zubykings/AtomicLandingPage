@@ -4,8 +4,8 @@ import { cardData } from "../assets/cardData";
 
 const CardSection = () => {
   return (
-    <div className="w-full absolute -bottom-28 ">
-      <div className="w-[90%] flex flex-row flex-wrap m-auto items-center justify-around shadow-2xl bg-white">
+    <div className="w-full">
+      <div className="w-[90%] flex flex-row flex-wrap m-auto items-center justify-around shadow-2xl bg-white rounded">
         {cardData.map((card) => (
           <Card
             key={card.id}

@@ -18,24 +18,28 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="shadow-xl md:shadow-none" >
-      <div className="flex items-start  justify-between md:py-4  " >
+    <nav className="shadow-xl md:shadow-none transition-all duration-500">
+      <div className="flex items-start justify-between md:py-4">
         <div className="flex items-center gap-5">
-          <h1 className="font-bold text-3xl px-2 md:px-0 py-4 md:py-0">Atomic</h1>
-          {isOpen ? null : (
-            <ul className="md:flex hidden gap-3 items-center text-gray-500">
-              {navLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="hover:text-green-500 transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
+          <h1 className="font-bold text-3xl px-2 md:px-0 py-4 md:py-0">
+            Atomic
+          </h1>
+          <ul
+            className={`md:flex hidden gap-3 items-center text-gray-500 ${
+              isOpen ? "flex" : "hidden"
+            }`}
+          >
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <a
+                  href={link.href}
+                  className="hover:text-green-500 transition-colors"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="hidden gap-3 md:flex items-center text-sm">
@@ -57,8 +61,7 @@ const Navbar = () => {
           <div className="flex">
             <button
               onClick={handleToggle}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white
-          "
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
@@ -98,38 +101,40 @@ const Navbar = () => {
               )}
             </button>
           </div>
+        </div>
+      </div>
 
-          {isOpen && (
-            <div className="flex flex-col bg-gray-800 py-4 px-6 mt-4 sm:hidden">
-              <ul className="flex flex-col gap-3 items-center text-gray-500">
-                {navLinks.map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href={link.href}
-                      className="hover:text-green-500 transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+      <div
+        className={`overflow-hidden bg-gray-800 flex flex-col items-center justify-around transition-all duration-500 ${
+          isOpen ? "h-[25rem] py-4 px-6" : "h-0 py-0 px-0"
+        }`}
+      >
+        <ul className="flex flex-col gap-4 items-start font-bold text-start text-white  ">
+          {navLinks.map((link, index) => (
+            <li key={index}>
+              <a
+                href={link.href}
+                className="hover:text-green-500 transition-colors"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-              <div className="gap-3 flex flex-col items-center text-sm mt-4">
-                <Button
-                  text="Login"
-                  bgColor="bg-green-500"
-                  textColor="text-white"
-                  radius="rounded-full"
-                />
-                <Button
-                  text="Sign Up"
-                  bgColor="bg-white"
-                  textColor="text-black"
-                  radius="rounded-full"
-                />
-              </div>
-            </div>
-          )}
+        <div className="gap-3 flex flex-col items-center text-sm mt-4">
+          <Button
+            text="Login"
+            bgColor="bg-green-500"
+            textColor="text-white"
+            radius="rounded-full"
+          />
+          <Button
+            text="Sign Up"
+            bgColor="bg-white"
+            textColor="text-black"
+            radius="rounded-full"
+          />
         </div>
       </div>
     </nav>

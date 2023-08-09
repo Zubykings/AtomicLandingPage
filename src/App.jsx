@@ -10,10 +10,7 @@ function App() {
   return (
     <>
       <div>
-        {/* <Header /> */}
         <HomeView />
-      <CardSection />
-
       </div>
     </>
   );

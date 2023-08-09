@@ -3,14 +3,17 @@ import Button from "./Button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  // const [oldAge, setOldAge] = useState(5)
+  // const [newAge, setNewAge] = useState(0)
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
+    // setNewAge((prevAge) => prevAge * 2)
   };
 
   return (
     <nav className="flex items-center justify-between">
-      <div className="flex items-center gap-5">
+      {/* <div className="flex items-center gap-5">
         <h1 className="font-bold text-[44px] ">Atomic</h1>
         <ul className="md:flex flex-row gap-3 items-center text-gray-500 hidden ">
           <li>
@@ -129,7 +132,7 @@ const Navbar = () => {
             />
           </div>
         </div>
-      )}
+      )} */}
     </nav>
   );
 };
